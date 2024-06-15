@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-image: url('/image/Cartone.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+  margin-bottom: 60px;
+}
+.pb-3 {
+    padding-bottom: 1rem !important;
+    color: white;
+}
+.bg-white {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    padding: 20px; /* Optional: Add padding for spacing inside */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+}

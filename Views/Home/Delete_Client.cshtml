@@ -1,0 +1,15 @@
+﻿@model string  // Assuming the model type passed is string (for client id)
+
+@{
+    ViewData["Title"] = "Delete Client";
+}
+
+<h2>Delete Client</h2>
+
+<p>Are you sure you want to delete the client with ID: @Model?</p>
+
+<form method="post" action="@Url.Action("Delete_Client", "Home")">
+    <input type="hidden" name="id" value="@Model" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Client" class="btn btn-secondary">Cancel</a>
+</form>

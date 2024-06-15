@@ -1,0 +1,54 @@
+﻿@model CustomIdentity.Models.Create_Db
+
+<h2>New Client</h2>
+
+<style>
+    .custom-background {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<form method="post" class="custom-background p-3">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="ClientInfo.Name">
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.ClientInfo.Name)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="ClientInfo.Email">
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.ClientInfo.Email)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="ClientInfo.Phone">
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.ClientInfo.Phone)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="ClientInfo.Address">
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.ClientInfo.Address)</span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3">
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</form>

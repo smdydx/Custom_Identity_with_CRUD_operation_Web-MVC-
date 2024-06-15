@@ -1,0 +1,52 @@
+﻿@model Edit_Db
+
+<br />
+<h2>Edit Clients</h2>
+
+<style>
+    .custom-background {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<form method="POST" class="custom-background p-3">
+    <input type="hidden" name="id" value="@Model.clientInfo.Id" />
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.Name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.clientInfo.Email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.clientInfo.Phone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.clientInfo.Address">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3">
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,62 @@
+﻿@model Client_Db
+@{
+}
+<style>
+    .content {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .table th, .table td {
+        color: white;
+    }
+
+    .btn-primary, .btn-danger {
+        color: white;
+    }
+
+    body {
+        background: url('/image/Cartone.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+
+<div class="content">
+    <br>
+    <h2>List of Clients</h2>
+    <a class='btn btn-primary btn-sm' href="/Home/Create_Client">New Client</a>
+    <br>
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in Model.ListClients)
+            {
+                <tr>
+                    <td>@client.Id</td>
+                    <td>@client.Name</td>
+                    <td>@client.Email</td>
+                    <td>@client.Phone</td>
+                    <td>@client.Address</td>
+                    <td>
+                        <a class='btn btn-primary btn-sm' href="/Home/Edit_Client?id=@client.Id">Edit</a>
+                        <a class='btn btn-danger btn-sm' asp-action="Delete_Client" asp-route-id="@client.Id" onclick="return confirm('Are you sure you want to delete this client?')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
